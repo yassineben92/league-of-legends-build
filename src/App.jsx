@@ -20,8 +20,13 @@ function App() {
     // Detect if we are on GitHub Pages or if Backend is unreachable
     const init = async () => {
         try {
-            // Quick check for backend
-            const res = await fetch(`${API_BASE}/health`, { signal: AbortSignal.timeout(2000) });
+            // Check for backend with a timeout compatible with older browsers
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+            const res = await fetch(`${API_BASE}/health`, { signal: controller.signal });
+            clearTimeout(timeoutId);
+
             if (!res.ok) throw new Error("Backend unavailable");
             const data = await res.json();
             setPatch(data.patch);
