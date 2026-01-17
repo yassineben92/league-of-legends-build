@@ -20,6 +20,11 @@ function App() {
     // Detect if we are on GitHub Pages or if Backend is unreachable
     const init = async () => {
         try {
+            // Skip backend check if on HTTPS and backend is HTTP (Mixed Content restriction)
+            if (window.location.protocol === 'https:' && API_BASE.startsWith('http:')) {
+                throw new Error("Mixed content restriction");
+            }
+
             // Check for backend with a timeout compatible with older browsers
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 2000);
