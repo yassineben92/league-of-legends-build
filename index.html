@@ -8,20 +8,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      window.onerror = function(message, source, lineno, colno, error) {
-        const root = document.getElementById('root');
-        root.innerHTML = `
-          <div style="padding: 20px; color: #ff6b6b; background: #2d2d2d; font-family: monospace;">
-            <h1>Application Error</h1>
-            <p><strong>Message:</strong> ${message}</p>
-            <p><strong>Source:</strong> ${source}:${lineno}:${colno}</p>
-            <pre>${error ? error.stack : 'No stack trace'}</pre>
-          </div>
-        `;
-        console.error('Global Error Caught:', error);
-      };
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
