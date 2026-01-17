@@ -2,7 +2,7 @@ name: Deploy Vite site to Pages
 
 on:
   push:
-    branches: ["gemini-lol-builder-12430802987003094716"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
