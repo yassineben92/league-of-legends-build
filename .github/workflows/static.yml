@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Dossier de sortie par défaut de Vite
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
