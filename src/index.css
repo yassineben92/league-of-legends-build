@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-hextech-gold: #C8AA6E;
+  --color-hextech-blue: #0AC8B9;
+  --color-void-purple: #A020F0;
+  --color-zaun-green: #00FF00;
+  --color-noxus-red: #FF0000;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
