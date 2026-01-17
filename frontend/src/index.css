@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #091428; /* LoL Dark Blue */
+  color: #C8AA6E; /* LoL Gold */
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #091428;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8AA6E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F0E6D2;
+}
+
+.hextech-border {
+  border: 1px solid #C8AA6E;
+  box-shadow: 0 0 10px rgba(200, 170, 110, 0.2);
+}
+
+.glass-panel {
+  background: rgba(10, 20, 40, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 170, 110, 0.3);
+}
